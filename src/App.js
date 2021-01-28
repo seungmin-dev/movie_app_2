@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Movie from './Movies';
+import "./App.css";
 
 class App extends React.Component { 
   state = {
@@ -17,11 +18,13 @@ class App extends React.Component {
   render() {
     const { isLoading, movies } = this.state; //isLoading 옆에 movies를 선언?해주지 않으면 밑에서 this.state.movies 이렇게 장황하게 써야함
     return (
-      <div>
-        {isLoading ? "Loading..." : movies.map(movie => (
-          <Movie key={movie.id} id={movie.id} year={movie.year} title={movie.title} summary={movie.summary} poster={movie.medium_cover_image} /> //map에서는 항상 무언가를 return해줘야함
+      <section class="containter">
+        {isLoading ? (<div class="loader"><span class="loader__text">loading...</span></div>) : movies.map(movie => (
+          <div class="movies">
+            <Movie key={movie.id} id={movie.id} year={movie.year} title={movie.title} summary={movie.summary} poster={movie.medium_cover_image} />
+          </div>
         ))}
-      </div>
+      </section>
     ); 
   };
 }
