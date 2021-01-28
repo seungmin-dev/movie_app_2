@@ -1,0 +1,12 @@
+{
+    "editor.codeActionsOnSave": null,
+    "editor.formatOnSave": true,
+    "launch": {
+        
+
+
+        "configurations": [],
+        "compounds": []
+    },
+    "prettier.trailingComma": "all"
+}
